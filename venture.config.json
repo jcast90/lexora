@@ -1,0 +1,338 @@
+{
+  "name": "Lexora",
+  "tagline": "Streamline legal intake, maximize opportunities",
+  "description": "An AI-driven legal client intake assistant that helps solo practitioners and small law firms collect accurate client information faster, improving client experience and reducing administrative overhead.",
+  "domain": "lexora.co",
+  "flags": {
+    "waitlistMode": false,
+    "mvpReady": true
+  },
+  "brand": {
+    "primary": "#10b981",
+    "primaryDark": "#059669",
+    "accent": "#06b6d4",
+    "gradient": "from-emerald-500 to-cyan-500",
+    "gradientHover": "from-emerald-400 to-cyan-400",
+    "surface": "#0A0A0F",
+    "surfaceLight": "#111118"
+  },
+  "landing": {
+    "headline": "Simplify Legal Client Intake with AI",
+    "subheadline": "Guided, customizable intake forms designed for solo lawyers and small law firms.",
+    "painStats": [
+      {
+        "stat": "40%",
+        "label": "time wasted on manual client intake"
+      }
+    ],
+    "steps": [
+      {
+        "title": "Create Your Intake Template",
+        "desc": "Choose or customize intake forms tailored to your practice area."
+      },
+      {
+        "title": "Share Secure Client Portal",
+        "desc": "Send clients a unique link to complete AI-guided intake on any device."
+      },
+      {
+        "title": "Manage & Export Data",
+        "desc": "View, edit, and export client intake data easily from your dashboard."
+      }
+    ],
+    "painPoints": [
+      "Manual, error-prone client intake processes",
+      "Lost billable hours due to incomplete info",
+      "Complex, expensive legal CRMs"
+    ],
+    "pricing": [
+      {
+        "plan": "Free",
+        "price": "$0",
+        "period": "/mo",
+        "desc": "Basic access with 1 template and 5 submissions per month.",
+        "features": [
+          "1 intake template",
+          "5 client submissions per month",
+          "Email support"
+        ],
+        "highlighted": false
+      },
+      {
+        "plan": "Pro",
+        "price": "$29",
+        "period": "/mo",
+        "desc": "Unlimited templates and 100 submissions per month.",
+        "features": [
+          "Unlimited intake templates",
+          "100 client submissions per month",
+          "Priority email support"
+        ],
+        "highlighted": true
+      },
+      {
+        "plan": "Plus",
+        "price": "$49",
+        "period": "/mo",
+        "desc": "High volume with data export and priority chat support.",
+        "features": [
+          "Unlimited intake templates",
+          "500 client submissions per month",
+          "CSV export of intake data",
+          "Priority chat support"
+        ],
+        "highlighted": false
+      }
+    ],
+    "finalCta": {
+      "headline": "Ready to streamline your client intake?",
+      "subheadline": "Start your free plan today and see the difference AI can make."
+    },
+    "primaryCta": "Try it Free",
+    "secondaryCta": "View Pricing",
+    "navCta": "Try it Free",
+    "socialProofLine": "Trusted by growing teams everywhere",
+    "waitlistCardTitle": "Get early access",
+    "waitlistCardSubtitle": "Be among the first to try Lexora.",
+    "finalCtaButton": "Try it Free",
+    "features": [],
+    "testimonials": [],
+    "faq": [],
+    "screenshots": [],
+    "template": "warmth"
+  },
+  "dashboard": {
+    "navItems": [
+      {
+        "label": "Dashboard",
+        "href": "/dashboard",
+        "icon": "LayoutDashboard"
+      },
+      {
+        "label": "Intake Submissions",
+        "href": "/dashboard/intake-submissions",
+        "icon": "ClipboardList"
+      },
+      {
+        "label": "Templates",
+        "href": "/dashboard/templates",
+        "icon": "Template"
+      },
+      {
+        "label": "Account & Billing",
+        "href": "/dashboard/account",
+        "icon": "UserCircle"
+      }
+    ],
+    "features": [
+      {
+        "name": "Intake Submissions",
+        "slug": "intake-submissions",
+        "description": "View, edit, and export client intake submissions.",
+        "table": "PREFIX_intake_submissions",
+        "fields": [
+          {
+            "name": "client_name",
+            "type": "text",
+            "label": "Client Name",
+            "required": true
+          },
+          {
+            "name": "submission_date",
+            "type": "datetime",
+            "label": "Submission Date",
+            "required": true
+          },
+          {
+            "name": "template_used",
+            "type": "text",
+            "label": "Template Used",
+            "required": true
+          },
+          {
+            "name": "status",
+            "type": "enum",
+            "label": "Status",
+            "required": true
+          },
+          {
+            "name": "contact_email",
+            "type": "text",
+            "label": "Contact Email",
+            "required": true
+          }
+        ],
+        "crud": {
+          "create": true,
+          "read": true,
+          "update": true,
+          "delete": true
+        },
+        "stats": [
+          {
+            "label": "Total Submissions This Month",
+            "field": "count"
+          },
+          {
+            "label": "Pending Reviews",
+            "field": "pending_count"
+          },
+          {
+            "label": "Submission Limit Usage",
+            "field": "usage"
+          }
+        ],
+        "defaultSort": "submitted_at",
+        "searchable": [
+          "client_name",
+          "contact_email"
+        ]
+      },
+      {
+        "name": "Templates",
+        "slug": "templates",
+        "description": "Manage intake templates for different legal practice areas.",
+        "table": "PREFIX_templates",
+        "fields": [
+          {
+            "name": "template_name",
+            "type": "text",
+            "label": "Template Name",
+            "required": true
+          },
+          {
+            "name": "practice_area",
+            "type": "text",
+            "label": "Practice Area",
+            "required": true
+          },
+          {
+            "name": "questions_count",
+            "type": "integer",
+            "label": "Number of Questions",
+            "required": true
+          },
+          {
+            "name": "last_modified",
+            "type": "datetime",
+            "label": "Last Modified",
+            "required": true
+          }
+        ],
+        "crud": {
+          "create": true,
+          "read": true,
+          "update": true,
+          "delete": true
+        },
+        "stats": [
+          {
+            "label": "Active Templates",
+            "field": "count"
+          },
+          {
+            "label": "Template Usage Frequency",
+            "field": "usage_frequency"
+          }
+        ],
+        "defaultSort": "updated_at",
+        "searchable": [
+          "template_name",
+          "practice_area"
+        ]
+      },
+      {
+        "name": "Account & Billing",
+        "slug": "account",
+        "description": "Manage your profile, subscription, and billing details.",
+        "table": "PREFIX_users",
+        "fields": [
+          {
+            "name": "user_email",
+            "type": "text",
+            "label": "User Email",
+            "required": true
+          },
+          {
+            "name": "current_plan",
+            "type": "enum",
+            "label": "Current Plan",
+            "required": true
+          },
+          {
+            "name": "subscription_status",
+            "type": "enum",
+            "label": "Subscription Status",
+            "required": true
+          },
+          {
+            "name": "payment_method",
+            "type": "text",
+            "label": "Payment Method (Last 4 Digits)",
+            "required": false
+          },
+          {
+            "name": "templates_count",
+            "type": "integer",
+            "label": "Templates Count",
+            "required": true
+          },
+          {
+            "name": "submissions_used",
+            "type": "integer",
+            "label": "Submissions Used",
+            "required": true
+          }
+        ],
+        "crud": {
+          "create": false,
+          "read": true,
+          "update": true,
+          "delete": false
+        },
+        "stats": [
+          {
+            "label": "Days Remaining in Billing Cycle",
+            "field": "days_remaining"
+          },
+          {
+            "label": "Next Billing Amount",
+            "field": "next_billing_amount"
+          }
+        ],
+        "defaultSort": "created_at",
+        "searchable": [
+          "user_email"
+        ]
+      }
+    ]
+  },
+  "analytics": {
+    "provider": "posthog",
+    "errorMonitoring": "sentry",
+    "capturePageViews": true,
+    "captureWaitlist": true
+  },
+  "experiments": {
+    "landingPage": {
+      "key": "landing_page_v1",
+      "cookieName": "vo_exp_landing_page",
+      "variants": [
+        {
+          "key": "control",
+          "weight": 50
+        },
+        {
+          "key": "variant_b",
+          "weight": 50,
+          "overrides": {
+            "headline": "Simplify Legal Client Intake with AI",
+            "subheadline": "Guided, customizable intake forms designed for solo lawyers and small law firms.",
+            "primaryCta": "Start Free",
+            "navCta": "Start Free",
+            "finalCtaButton": "Start Free"
+          }
+        }
+      ]
+    }
+  }
+}

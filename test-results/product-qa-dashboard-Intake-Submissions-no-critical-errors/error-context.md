@@ -1,0 +1,43 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - complementary [ref=e4]:
+      - generic [ref=e6]:
+        - img [ref=e8]
+        - generic [ref=e10]: Lexora
+      - separator [ref=e11]
+      - navigation [ref=e13]:
+        - link "Dashboard" [ref=e14] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=e15]
+          - generic [ref=e20]: Dashboard
+        - link "Intake Submissions" [ref=e21] [cursor=pointer]:
+          - /url: /dashboard/intake-submissions
+          - img [ref=e22]
+          - generic [ref=e27]: Intake Submissions
+        - link "Templates" [ref=e29] [cursor=pointer]:
+          - /url: /dashboard/templates
+          - img [ref=e30]
+          - generic [ref=e35]: Templates
+        - link "Account & Billing" [ref=e36] [cursor=pointer]:
+          - /url: /dashboard/account
+          - img [ref=e37]
+          - generic [ref=e42]: Account & Billing
+      - separator [ref=e43]
+      - button "JD John Doe john@example.com" [ref=e45] [cursor=pointer]:
+        - generic [ref=e47]: JD
+        - generic [ref=e48]:
+          - generic [ref=e49]: John Doe
+          - generic [ref=e50]: john@example.com
+    - main [ref=e51]:
+      - generic [ref=e53]:
+        - generic [ref=e54]:
+          - heading "Intake Submissions" [level=1] [ref=e55]
+          - generic [ref=e56]: 0 records
+        - generic [ref=e57]:
+          - generic [ref=e59]: Intake Submissions List
+          - generic [ref=e61]: No records found.
+  - alert [ref=e62]
+```
